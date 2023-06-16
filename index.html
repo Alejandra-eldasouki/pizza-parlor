@@ -4,41 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" type="text/css" />
-    <script src="js/scripts.js"></script>
     <title>Pizza Parlor</title>
   </head>
   <body>
-    <h1>Pizza Ordering</h1>
-    <div class="pizza-form">
+    <h1>Pizza Order</h1>
+    <div class="pizzaForm">
       <h2>Order your Pizza</h2>
-      <div class="toppings">
-        <h3>Toppings:</h3>
-        <input type="checkbox" id="cheese" name="topping" value="cheese" />
-        <label for="cheese">cheese</label>
-        <input
-          type="checkbox"
-          id="pepperoni"
-          name="topping"
-          value="pepperoni"
-        />
-        <label for="pepperoni">Pepperoni</label>
-        <input
-          type="checkbox"
-          id="pineapple"
-          name="topping"
-          value="pineapple"
-        />
-        <label for="pineapple">Pineapple</label>
+    <label for="toppings">Toppings:</label>
+    <input type="checkbox" name="toppings[]" id="toppings" value="pepperoni"> Pepperoni
+    <input type="checkbox" name="toppings[]" id="mushrooms" value="mushrooms"> Mushrooms
+    <input type="checkbox" name="toppings[]" id="olives" value="olives"> Olives
       </div>
-      <div class="size">
-        <h3>Size:</h3>
-        <input type="radio" id="small" name="size" value="small" />
-        <label for="small">Small</label>
-        <input type="radio" id="medium" name="size" value="medium" />
-        <label for="medium">Medium</label>
-        <input type="radio" id="large" name="size" value="large" />
-        <label for="large">Large</label>
-      </div>
+
+      <br>
+
+      <label for="size">Choose Size:</label>
+    <select name="size" id="size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <br>
+
+
       <button onclick="addPizza()">Add Pizza</button>
     </div>
     <div id="orderSummary">
@@ -48,8 +37,9 @@
       <div id="deliveryForm" style="display: none">
         <h3>Delivery Address</h3>
         <input type="text" id="addressInput" placeholder="Enter your address" />
-        <button oncanplay="submitDelivery()">Submit Order</button>
+        <button onclick="submitDelivery()">Submit Order</button>
       </div>
     </div>
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>

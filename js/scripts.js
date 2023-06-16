@@ -21,21 +21,20 @@ Pizza.prototype.calculateTotal = function () {
 
 function addPizza() {
   var toppings = [];
-  var toppingsCheckboxes = document.getElementById('toppings');
+  var toppingsCheckboxes = document.getElementById('toppings[]');
   for (var i = 0; i < toppingsCheckboxes.length; i++) {
-    if (toppingsCheckboxes[i]) {
+    if (toppingsCheckboxes[i].checked) {
       toppings.push(toppingsCheckboxes[i].value);
     }
   }
-  var size = document.querySelector("select[name='size']"),
-    value;
+  var size = document.getElementById('size').value;
 
   var pizza = new Pizza(toppings, size);
   var cost = pizza.calculateTotal();
 
   var pizzaList = document.getElementById('pizzaList');
   var li = document.createElement('li');
-  li.innerHTML =
+  li.textContent =
     'Pizza with ' + toppings.join(', ') + ' - ' + size + ' ($' + cost + ')';
   pizzaList.appendChild(li);
 }
