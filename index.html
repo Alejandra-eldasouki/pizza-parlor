@@ -32,20 +32,23 @@
       </div>
       <div class="size">
         <h3>Size:</h3>
-        <input type="radio" id="personal" name="size" value="personal" />
-        <label for="personal">Personal</label>
+        <input type="radio" id="small" name="size" value="small" />
+        <label for="small">Small</label>
         <input type="radio" id="medium" name="size" value="medium" />
         <label for="medium">Medium</label>
-        <input type="radio" id="family" name="size" value="Family" />
-        <label for="family">Family</label>
+        <input type="radio" id="large" name="size" value="large" />
+        <label for="large">Large</label>
       </div>
-      <button id="add-pizza-btn">Add Pizza</button>
+      <button onclick="addPizza()">Add Pizza</button>
     </div>
-    <div class="delivery-form">
-      <h2>Delivery Information</h2>
-      <input type="text" id="address" placeholder="Enter your address" />
-      <button id="submit-btn">Submit your order</button>
+    <div id="orderSummary">
+      <h2>order summary</h2>
+      <button onclick="toggleDeliveryForm()">Delivery Options</button>
+      <div id="deliveryForm" style="display: none">
+        <h3>Delivery Address</h3>
+        <input type="text" id="addressInput" placeholder="Enter your address" />
+        <button oncanplay="submitDelivery()">Submit Order</button>
+      </div>
     </div>
-    <div id="order-summary"></div>
   </body>
 </html>

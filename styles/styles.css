@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+#pizzaForm {
+  margin-bottom: 20px;
+}
+
+#pizzasList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#pizzasList li {
+  margin-bottom: 5px;
+}
+
+#deliveryForm {
+  margin-top: 10px;
+}
