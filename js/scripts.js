@@ -5,7 +5,7 @@ function Pizza(toppings, size) {
 }
 
 // Prototype
-Pizza.prototype.calculateTotal = function () {
+Pizza.prototype.calculateCost = function () {
   var initialCost = 5;
   var toppingsCost = this.toppings.length * 1.5;
   var sizeCost = 0;
@@ -21,22 +21,24 @@ Pizza.prototype.calculateTotal = function () {
 
 function addPizza() {
   var toppings = [];
-  var toppingsCheckboxes = document.getElementById('toppings[]');
+  var toppingsCheckboxes = document.querySelectorAll(
+    "input[name='toppings[]']:checked"
+  );
+
   for (var i = 0; i < toppingsCheckboxes.length; i++) {
-    if (toppingsCheckboxes[i].checked) {
-      toppings.push(toppingsCheckboxes[i].value);
-    }
+    toppings.push(toppingsCheckboxes[i].value);
   }
+
   var size = document.getElementById('size').value;
 
   var pizza = new Pizza(toppings, size);
-  var cost = pizza.calculateTotal();
+  var cost = pizza.calculateCost();
 
-  var pizzaList = document.getElementById('pizzaList');
+  var pizzasList = document.getElementById('pizzasList');
   var li = document.createElement('li');
   li.textContent =
     'Pizza with ' + toppings.join(', ') + ' - ' + size + ' ($' + cost + ')';
-  pizzaList.appendChild(li);
+  pizzasList.appendChild(li);
 }
 
 function toggleDeliveryForm() {
